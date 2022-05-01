@@ -1,125 +1,133 @@
-// import React, { useEffect, useRef, useState } from "react";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
-// // import auth from "../../../firebase.init";
-// import {
-//   useSendPasswordResetEmail,
-//   useSignInWithEmailAndPassword,
-// } from "react-firebase-hooks/auth";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import auth from "../../../firebase.init";
+import { Button, Form } from "react-bootstrap";
+import SocialLogin from "../Social Login/SocialLogin";
 // import SocialLogin from "../Social Login/SocialLogin";
 // import Loading from "../../Shared/Loading/Loading";
 // import useToken from "../../../Hooks/UseToken";
 // // import carPng from '../../../img/undraw_electric_car_b7hl.png';
 
 const Login = () => {
-  //   const emailRef = useRef("");
-  //   const passwordRef = useRef("");
-  //   const navigate = useNavigate();
-  //   const location = useLocation();
-  //   const [email, setEmail] = useState('');
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [email, setEmail] = useState("");
 
-  //   let from = location.state?.from?.pathname || "/";
-  //   let errorElement = <></>;
+  let from = location.state?.from?.pathname || "/";
+  let errorElement = <></>;
 
-  //   const eventSetEmail = (event) => {
-  //     setEmail(event.target.value);
-  //   };
+  const eventSetEmail = (event) => {
+    setEmail(event.target.value);
+  };
 
-  //   const [signInWithEmailAndPassword, user, loading, error] =
-  //     useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
-  //   const [token] = useToken(user);
+  // const [token] = useToken(user);
 
-  //   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   //   if (loading) {
   //     return <Loading></Loading>;
   //   }
 
-  //   if (token) {
-  //     navigate(from, { replace: true });
-  //   }
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
-  //   const EventSubmit = async (event) => {
-  //     event.preventDefault();
-  //     const email = emailRef.current.value;
-  //     const password = passwordRef.current.value;
+  const EventSubmit = async (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
-  //     await signInWithEmailAndPassword(email, password);
-  //   };
+    await signInWithEmailAndPassword(email, password);
+  };
 
-  //   const resetPassword = async () => {
-  //     const email = emailRef.current.value;
-  //     if (email !== "") {
-  //       await sendPasswordResetEmail(email);
-  //       toast("Email Sent");
-  //     } else {
-  //       toast.error("please enter your email address", {
-  //         theme: "colored",
-  //       });
-  //     }
-  //   };
-  //   if (error) {
-  //     errorElement = (
-  //       <div className="my-3">
-  //         <p className="text-danger"> {error?.message}</p>
-  //       </div>
-  //     );
-  //   }
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email !== "") {
+      await sendPasswordResetEmail(email);
+      toast("Email Sent");
+    } else {
+      toast.error("please enter your email address", {
+        theme: "colored",
+      });
+    }
+  };
+  if (error) {
+    errorElement = (
+      <div className="my-3">
+        <p className="text-danger"> {error?.message}</p>
+      </div>
+    );
+  }
   return (
-    <div className="row">
-      {/* <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
-        <img className="wave img-fluid" src={carPng} alt="svg car image" />
+    <div className="row container-fluid">
+      <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
+        {/* <img className="wave img-fluid" src={carPng} alt="svg car image" /> */}
       </div>
       <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
         <div className="form-container">
           <div>
             <h2 className="form-title mb-5 text-center">Login</h2>
-            <form onSubmit={EventSubmit}>
-              <div className="input-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  onBlur={eventSetEmail}
+            <SocialLogin></SocialLogin>
+            <Form onSubmit={EventSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control
                   ref={emailRef}
                   type="email"
-                  name="email"
+                  placeholder="Enter email"
                   required
                 />
-              </div>
-              <div className="input-group">
-                <label htmlFor="password">Password</label>
-                <input ref={passwordRef} type="password" name="password" />
-              </div>
-              <input
-                className="form-submit button-33"
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control
+                  ref={passwordRef}
+                  type="password"
+                  placeholder="Password"
+                  required
+                />
+              </Form.Group>
+              <Button
+                variant="btn btn-dark w-50 d-block mx-auto btn-hover fw-bolder"
                 type="submit"
-                required
-                value="Login"
-              />
-            </form>
+              >
+                Login
+              </Button>
+            </Form>
             {errorElement}
-            <p className="my-3 fs-5">
-              Already have an account?{" "}
+            <p>
+              New to Tutor On The Go?
+              <Link
+                to="/signup"
+                className="btn btn-link text-primary pe-auto text-decoration-none"
+              >
+                Please Register
+              </Link>
+            </p>
+            <p>
+              Forget Password?
               <button
-                className="form-link bg-transparent border-0"
+                className="btn btn-link text-primary pe-auto text-decoration-none"
                 onClick={resetPassword}
               >
                 Reset Password
               </button>
             </p>
-            <p className="my-3 fs-5">
-              New User?{" "}
-              <Link className="form-link" to="/signup">
-                Sign Up
-              </Link>
-            </p>
-            <SocialLogin></SocialLogin>
+
+            <ToastContainer />
           </div>
-          <ToastContainer />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

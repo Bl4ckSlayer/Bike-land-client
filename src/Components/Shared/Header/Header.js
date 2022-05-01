@@ -1,9 +1,16 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const userSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div>
       <Navbar
@@ -25,23 +32,47 @@ const Header = () => {
               <CustomLink className="me-4 navLink" to="/myitems">
                 My Items
               </CustomLink>
-              {/* {
-                            user && <>
-                            <CustomLink className="me-4 navLink" to="/manageInventory">Manage Inventory</CustomLink>
-                            <CustomLink className="me-4 navLink" to="/addInventory">Add Inventory</CustomLink>
-                            </>
-                        }
-                        <CustomLink className="me-4 navLink" to="/blogs">Blogs</CustomLink>
-                        <CustomLink className="me-4 navLink" to="/about">About</CustomLink>
-                        {
-                            !user ? <>
-                                <CustomLink className="me-4 navLink" to="/signup">Sign Up</CustomLink>
-                                <CustomLink className="me-4 navLink" to="/login">Login</CustomLink></>
-                                :
-                                <>
-                                    <span className='navLink border-0 fw-bold user-name me-4' style={{color: "white"}}>{user?.displayName}</span>
-                                    <button className="navLink border-0 bg-transparent text-start p-0" onClick={userSignOut}>Sign Out</button></>
-                        } */}
+              {user && (
+                <>
+                  <CustomLink className="me-4 navLink" to="/manageInventory">
+                    Manage Inventory
+                  </CustomLink>
+                  <CustomLink className="me-4 navLink" to="/addInventory">
+                    Add Inventory
+                  </CustomLink>
+                </>
+              )}
+              <CustomLink className="me-4 navLink" to="/blogs">
+                Blogs
+              </CustomLink>
+              <CustomLink className="me-4 navLink" to="/about">
+                About
+              </CustomLink>
+              {!user ? (
+                <>
+                  <CustomLink className="me-4 navLink" to="/signup">
+                    Sign Up
+                  </CustomLink>
+                  <CustomLink className="me-4 navLink" to="/login">
+                    Login
+                  </CustomLink>
+                </>
+              ) : (
+                <>
+                  <span
+                    className="navLink border-0 fw-bold user-name me-4"
+                    style={{ color: "white" }}
+                  >
+                    {user?.displayName}
+                  </span>
+                  <button
+                    className="navLink border-0 bg-transparent text-start p-0"
+                    onClick={userSignOut}
+                  >
+                    Sign Out
+                  </button>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
