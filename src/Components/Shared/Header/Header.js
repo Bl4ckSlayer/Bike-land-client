@@ -29,8 +29,8 @@ const Header = () => {
               <CustomLink className="me-4 navLink" to="/">
                 Home
               </CustomLink>
-              <CustomLink className="me-4 navLink" to="/myitems">
-                My Items
+              <CustomLink className="me-4 navLink" to="/myproducts">
+                My Products
               </CustomLink>
               {user && (
                 <>
