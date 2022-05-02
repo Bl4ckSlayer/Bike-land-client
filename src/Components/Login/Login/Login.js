@@ -10,10 +10,9 @@ import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
 import { Button, Form } from "react-bootstrap";
 import SocialLogin from "../Social Login/SocialLogin";
-// import SocialLogin from "../Social Login/SocialLogin";
-// import Loading from "../../Shared/Loading/Loading";
+import Loading from "../Loading/Loading";
+
 // import useToken from "../../../Hooks/UseToken";
-// // import carPng from '../../../img/undraw_electric_car_b7hl.png';
 
 const Login = () => {
   const emailRef = useRef("");
@@ -36,9 +35,9 @@ const Login = () => {
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-  //   if (loading) {
-  //     return <Loading></Loading>;
-  //   }
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   if (user) {
     navigate(from, { replace: true });
