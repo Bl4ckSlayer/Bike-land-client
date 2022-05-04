@@ -132,7 +132,7 @@ const Signup = () => {
                 Login
               </Link>
             </p>
-            {/* <SocialLogin></SocialLogin> */}
+            
           </div>
         </div>
       </div>

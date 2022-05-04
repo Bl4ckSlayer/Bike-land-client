@@ -6,19 +6,19 @@ import FindData from "../../../Hooks/FindData";
 
 const Product = (props) => {
   const { items, fromHome } = props;
-  const { name, description, price, img, supplierName, quantity } = items;
+  const { _id, name, description, price, img, supplierName, quantity } = items;
   const [DecreaseByOne, IncreaseByOne] = AllFunctions();
   const navigate = useNavigate();
 
-  const [car, setCar] = useState([]);
+  const [bike, setBike] = useState([]);
   const [show, setShow] = useState(false);
   const [findData, setFindData] = FindData();
 
   useEffect(() => {
     fetch(`http://localhost:5000/inventory`)
       .then((res) => res.json())
-      .then((data) => setCar(data));
-  }, [car]);
+      .then((data) => setBike(data));
+  }, [bike]);
 
   const newPath = (id) => {
     navigate(`/inventory/${id}`);
@@ -26,6 +26,8 @@ const Product = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // updating an user quanttit
   const confirm = (id) => {
     const url = `http://localhost:5000/inventory/${id}`;
     fetch(url, {
@@ -67,22 +69,16 @@ const Product = (props) => {
             </h5>
             {fromHome !== undefined ? (
               <>
-                <button
-                  onClick={() => newPath(items._id)}
-                  className="button-33"
-                >
+                <button onClick={() => newPath(_id)} className="button-33">
                   Update
                 </button>
               </>
             ) : (
               <>
-                <button
-                  onClick={() => newPath(items._id)}
-                  className="button-33 my-3"
-                >
+                <button onClick={() => newPath(_id)} className="button-33 my-3">
                   Update
                 </button>
-                <button onClick={() => Delete(items._id)} className="button-33">
+                <button onClick={() => Delete(_id)} className="button-33">
                   Delete Item
                 </button>
               </>
@@ -94,7 +90,7 @@ const Product = (props) => {
         <Modal.Header closeButton>
           <Modal.Title>Yowza</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are You Sure You Want To Delete {items.name}?</Modal.Body>
+        <Modal.Body>Are You Sure You Want To Delete {name}?</Modal.Body>
         <Modal.Footer>
           <button
             className="button-33"
@@ -106,7 +102,7 @@ const Product = (props) => {
           <button
             className="button-33"
             variant="primary"
-            onClick={() => confirm(items._id)}
+            onClick={() => confirm(_id)}
           >
             Proceed
           </button>

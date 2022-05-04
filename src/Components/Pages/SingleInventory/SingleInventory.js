@@ -1,7 +1,7 @@
+import { Button } from "bootstrap";
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AllFunctions from "../../../Hooks/AllFunctions";
-
 
 import "./SingleInventory.css";
 
@@ -9,22 +9,22 @@ const SingleInventory = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [car, setCar] = useState([]);
+  const [bike, setBike] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/inventory/${id}`)
       .then((res) => res.json())
-      .then((data) => setCar(data));
-  }, [car]);
+      .then((data) => setBike(data));
+  }, [bike]);
 
-  const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
-  const { name, description, price, img, supplierName, quantity } = car;
+  const [DecreaseByOne, IncreaseByOne] = AllFunctions();
+  const { name, description, price, img, supplierName, quantity } = bike;
 
   const EventSubmit = (event) => {
     event.preventDefault();
     const number = parseInt(event.target.number.value);
-    console.log(typeof number, typeof car.quantity);
-    IncreaseByOne(car, number);
+    console.log(typeof number, typeof bike.quantity);
+    IncreaseByOne(bike, number);
     event.target.reset();
   };
 
@@ -50,12 +50,18 @@ const SingleInventory = () => {
         <h5 className="text-center">
           Quantity: <span className="item-span">{quantity}</span>
         </h5>
-        <button
-          onClick={() => DecreaseByOne(car)}
-          className="button-33 mx-auto w-25"
-        >
-          Delivered
-        </button>
+        {quantity <= 0 ? (
+          <button disabled className="button-33 mx-auto w-25">
+            Stockout
+          </button>
+        ) : (
+          <button
+            onClick={() => DecreaseByOne(bike)}
+            className="button-33 mx-auto w-25"
+          >
+            Delivered
+          </button>
+        )}
       </div>
       <div className="card form-container p-5">
         <div>
