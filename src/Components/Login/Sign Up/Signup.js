@@ -9,10 +9,6 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../Social Login/SocialLogin";
-// import SocialLogin from "../Social Login/SocialLogin";
-// import Loading from "../../Shared/Loading/Loading";
-// import useToken from "../../../Hooks/UseToken";
-// import signUpSvg from "../../../img/undraw_Login_re_4vu2.png";
 
 const Signup = () => {
   let errorMsg;
@@ -132,7 +128,6 @@ const Signup = () => {
                 Login
               </Link>
             </p>
-            
           </div>
         </div>
       </div>
