@@ -37,7 +37,7 @@ const SingleInventory = () => {
         <h5 className="my-3 text-center">
           <span className="item-span">{name}</span>
         </h5>
-        <div className="img-div">
+        <div className=" ps-4 ms-4">
           <img src={img} width="500px" className="img-fluid" alt="car image" />
         </div>
         <p className="text-center fs-5">{description}</p>

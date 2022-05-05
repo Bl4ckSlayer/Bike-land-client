@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import AllFunctions from "../../../Hooks/AllFunctions";
 import FindData from "../../../Hooks/FindData";
+import "./Product.css";
 
 const Product = (props) => {
   const { items, fromHome } = props;
@@ -18,7 +19,7 @@ const Product = (props) => {
     fetch(`http://localhost:5000/inventory`)
       .then((res) => res.json())
       .then((data) => setBike(data));
-  }, [bike]);
+  }, []);
 
   const newPath = (id) => {
     navigate(`/inventory/${id}`);
@@ -48,37 +49,35 @@ const Product = (props) => {
   };
   return (
     <div className="p-5">
+      <h2 className=" pe-5 text-danger text-center ">{name}</h2>
       <div className="container">
         <div className="card">
-          <h5 className="my-3 text-start">
-            <span className="item-span">{name}</span>
-          </h5>
           <div className="imgBx">
-            <img src={img} className="img-fluid" alt="car images" />
+            <img src={img} className="img-fluid" alt="bike images" />
           </div>
+
           <div className="contentBx">
-            <p className="text-start fs-5">{description}</p>
-            <h5 className="text-start">
-              Rating: <span className="item-span">{price}</span>
-            </h5>
-            <h5 className="text-start">
-              Supplier Name: <span className="item-span">{supplierName}</span>
-            </h5>
-            <h5 className="text-start">
-              Quantity: <span className="item-span">{quantity}</span>
-            </h5>
+            <span className="text-start text-danger ">{description}</span>
+
+            <h6>Price : {price}</h6>
+            <div className="align-content-center align-items-center justify-content-between d-flex">
+              <h6>Brand :{supplierName}</h6>
+
+              <h6>Quantity: {quantity}</h6>
+            </div>
+
             {fromHome !== undefined ? (
               <>
-                <button onClick={() => newPath(_id)} className="button-33">
+                <button onClick={() => newPath(_id)} className="">
                   Update
                 </button>
               </>
             ) : (
               <>
-                <button onClick={() => newPath(_id)} className="button-33 my-3">
+                <button onClick={() => newPath(_id)} className=" my-3">
                   Update
                 </button>
-                <button onClick={() => Delete(_id)} className="button-33">
+                <button onClick={() => Delete(_id)} className="">
                   Delete Item
                 </button>
               </>
@@ -86,6 +85,8 @@ const Product = (props) => {
           </div>
         </div>
       </div>
+      <div className=" text-center "></div>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Yowza</Modal.Title>
@@ -113,3 +114,43 @@ const Product = (props) => {
 };
 
 export default Product;
+{
+  /* <div className="container">
+  <div className="card">
+    <h5 className="my-3 text-start">
+      <span className="item-span">{name}</span>
+    </h5>
+    <div className="imgBx">
+      <img src={img} className="img-fluid" alt="car images" />
+    </div>
+    <div className="contentBx">
+      <p className="text-start fs-5">{description}</p>
+      <h5 className="text-start">
+        Price: <span className="item-span">{price}</span>
+      </h5>
+      <h5 className="text-start">
+        Supplier Name: <span className="item-span">{supplierName}</span>
+      </h5>
+      <h5 className="text-start">
+        Quantity: <span className="item-span">{quantity}</span>
+      </h5>
+      {fromHome !== undefined ? (
+        <>
+          <button onClick={() => newPath(_id)} className="button-33">
+            Update
+          </button>
+        </>
+      ) : (
+        <>
+          <button onClick={() => newPath(_id)} className="button-33 my-3">
+            Update
+          </button>
+          <button onClick={() => Delete(_id)} className="button-33">
+            Delete Item
+          </button>
+        </>
+      )}
+    </div>
+  </div>
+</div>; */
+}

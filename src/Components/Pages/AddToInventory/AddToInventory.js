@@ -11,6 +11,7 @@ const AddToInventory = () => {
       price: event.target.price.value,
       img: event.target.img.value,
       supplierName: event.target.supplierName.value,
+
       quantity: event.target.quantity.value,
       email: event.target.email.value,
     };
