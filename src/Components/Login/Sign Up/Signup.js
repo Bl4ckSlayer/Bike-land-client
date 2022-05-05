@@ -65,14 +65,14 @@ const Signup = () => {
   }
   return (
     <div className="row container">
-      <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
+      <div className="col-lg-6 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
         {/* <img
           className="wave img-fluid"
           src={signUpSvg}
           alt="signup svg image"
         /> */}
       </div>
-      <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
+      <div className="col-lg-6 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
         <div className="form-container">
           <div>
             <h2 className="form-title mb-5 text-center">Sign Up</h2>
@@ -112,12 +112,14 @@ const Signup = () => {
               >
                 Accepct terms and conditions
               </label>
-              <input
-                className="form-submit"
+              <button
+                className="button-51"
                 type="submit"
                 required
                 value="Signup"
-              />
+              >
+                SignUp
+              </button>
             </form>
             <h6 className="text-danger my-3"> {errorMsg}</h6>
             <h6 className="text-danger my-3"> {errorMessage}</h6>

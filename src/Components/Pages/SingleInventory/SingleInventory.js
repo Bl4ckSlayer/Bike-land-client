@@ -1,5 +1,5 @@
-import { Button } from "bootstrap";
 import React, { useEffect, useRef, useState } from "react";
+import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import AllFunctions from "../../../Hooks/AllFunctions";
 
@@ -32,57 +32,60 @@ const SingleInventory = () => {
     navigate("/manageInventory");
   };
   return (
-    <div className="p-5">
-      <div className="card h-100 my-4 justify-content-center">
-        <h5 className="my-3 text-center">
-          <span className="item-span">{name}</span>
-        </h5>
-        <div className=" ps-4 ms-4">
-          <img src={img} width="500px" className="img-fluid" alt="car image" />
-        </div>
-        <p className="text-center fs-5">{description}</p>
-        <h5 className="text-center">
-          Rating: <span className="item-span">{price}</span>
-        </h5>
-        <h5 className="text-center">
-          Supplier Name: <span className="item-span">{supplierName}</span>
-        </h5>
-        <h5 className="text-center">
-          Quantity: <span className="item-span">{quantity}</span>
-        </h5>
-        {quantity <= 0 ? (
-          <button disabled className="button-33 mx-auto w-25">
-            Stockout
-          </button>
-        ) : (
-          <button
-            onClick={() => DecreaseByOne(bike)}
-            className="button-33 mx-auto w-25"
-          >
-            Delivered
-          </button>
-        )}
-      </div>
-      <div className="card form-container p-5">
-        <div>
-          <h2 className="form-title mb-5 text-center">Restock Inventory</h2>
-          <form onSubmit={EventSubmit}>
-            <div className="input-group">
-              <label htmlFor="number">Restock </label>
-              <input type="number" name="number" required />
-            </div>
-            <input
-              className="form-submit w-25"
-              type="submit"
-              required
-              value="Restock"
-            />
-          </form>
+    <div className="p-5 container">
+      <div className="row align-content-center align-items-center justify-content-center">
+        <Row className="g-4 col-lg-6 col-md-12 col-sm-12 order-2 ">
+          <Col>
+            <Card className="text-center">
+              <Card.Img variant="top" src={img} />
+              <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <Card.Title>Price : {price}</Card.Title>
+                <Card.Title>Quantity : {quantity}</Card.Title>
+                <Card.Title>Brand : {supplierName}</Card.Title>
+                <Card.Text>{description}</Card.Text>
+                {quantity <= 0 ? (
+                  <button disabled className="button-51 mx-auto w-50">
+                    Stockout
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => DecreaseByOne(bike)}
+                    className="button-51 mx-auto w-50"
+                  >
+                    Delivered
+                  </button>
+                )}
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+        <div className="card h-50  col-lg-6 col-md-12 col-sm-12  ">
+          <div className="">
+            <h2 className="form-title mb-5 text-center">Restock Inventory</h2>
+
+            <form onSubmit={EventSubmit}>
+              <div className="input-group">
+                <label htmlFor="number">Restock </label>
+                <input type="number" name="number" required />
+              </div>
+              <div className="text-center">
+                <button className="button-51 my-5 w-50 " type="submit">
+                  ReStock
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-      <button onClick={() => goToManageInventory()} className="button-33">
-        Manage Inventory
-      </button>
+      <div className="text-center">
+        <Button
+          onClick={() => goToManageInventory()}
+          className="button-51 mt-5"
+        >
+          Manage Inventory
+        </Button>
+      </div>
     </div>
   );
 };

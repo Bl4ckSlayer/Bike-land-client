@@ -70,11 +70,11 @@ const Login = () => {
     );
   }
   return (
-    <div className="row container-fluid">
-      <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
+    <div className="row container">
+      <div className="col-lg-6 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
         {/* <img className="wave img-fluid" src={carPng} alt="svg car image" /> */}
       </div>
-      <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
+      <div className="col-lg-6 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
         <div className="form-container">
           <div>
             <h2 className="form-title mb-5 text-center">Login</h2>
@@ -97,15 +97,16 @@ const Login = () => {
                 />
               </Form.Group>
               <Button
-                variant="btn btn-dark w-50 d-block mx-auto btn-hover fw-bolder"
+                className="button-51"
+                variant=" w-50 d-block mx-auto  fw-bolder"
                 type="submit"
               >
                 Login
               </Button>
             </Form>
             {errorElement}
-            <p>
-              New to Tutor On The Go?
+            <p className="mt-3">
+              New to Bike Land?
               <Link
                 to="/signup"
                 className="btn btn-link text-primary pe-auto text-decoration-none"

@@ -68,12 +68,9 @@ const AddToInventory = () => {
             <label htmlFor="email">Your Email</label>
             <input type="text" name="email" required />
           </div>
-          <input
-            className="form-submit"
-            type="submit"
-            required
-            value="Submit"
-          />
+          <button className="button-51" type="submit" required>
+            Submit
+          </button>
         </form>
       </div>
     </div>

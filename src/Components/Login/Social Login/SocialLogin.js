@@ -8,6 +8,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../Loading/Loading";
 // import useToken from '../../../Hooks/UseToken';
+import googleLogo from "../../../Images/social/google.png";
+import githubLogo from "../../../Images/social/github.png";
 
 const SocialLogin = () => {
   let errorMsg;
@@ -46,16 +48,16 @@ const SocialLogin = () => {
       <div className="">
         <button
           onClick={() => signInWithGoogle()}
-          className="button-33 d-block mx-auto my-2"
+          className="button-51 d-block mx-auto my-2"
         >
-          {/* <img style={{ width: "30px" }} src={googleLogo} alt="" /> */}
+          <img style={{ width: "30px" }} src={googleLogo} alt="" />
           <span className="px-2">Sign In</span>
         </button>
         <button
           onClick={() => signInWithGithub()}
-          className="button-33 d-block mx-auto"
+          className="button-51 d-block mx-auto"
         >
-          {/* <img style={{ width: "30px" }} src={githubLogo} alt="" /> */}
+          <img style={{ width: "30px" }} src={githubLogo} alt="" />
           <span className="px-2">Sign In</span>
         </button>
         {errorMsg}

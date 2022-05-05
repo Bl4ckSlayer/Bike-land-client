@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import AllFunctions from "../../../Hooks/AllFunctions";
 import FindData from "../../../Hooks/FindData";
@@ -48,45 +48,59 @@ const Product = (props) => {
     handleShow();
   };
   return (
-    <div className="p-5">
-      <h2 className=" pe-5 text-danger text-center ">{name}</h2>
+    <div className="container">
       <div className="container">
-        <div className="card">
-          <div className="imgBx">
-            <img src={img} className="img-fluid" alt="bike images" />
-          </div>
-
-          <div className="contentBx">
-            <span className="text-start text-danger ">{description}</span>
-
-            <h6>Price : {price}</h6>
-            <div className="align-content-center align-items-center justify-content-between d-flex">
-              <h6>Brand :{supplierName}</h6>
-
-              <h6>Quantity: {quantity}</h6>
+        <ul>
+          <li className="booking-card" style={{ height: "45rem" }}>
+            <img src={img} className="img-fluid " alt="" />
+            <div className="book-container">
+              <div className="content ">
+                {fromHome !== undefined ? (
+                  <>
+                    <button
+                      onClick={() => newPath(_id)}
+                      className="btn d-block text-center"
+                    >
+                      Update
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      onClick={() => newPath(_id)}
+                      className="btn my-3 text-center d-block"
+                    >
+                      Update
+                    </Button>
+                    <button
+                      onClick={() => Delete(_id)}
+                      className="btn text-center d-block"
+                    >
+                      Delete Item
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
+            <div className="informations-container">
+              <h2 className="title">{name}</h2>
 
-            {fromHome !== undefined ? (
-              <>
-                <button onClick={() => newPath(_id)} className="">
-                  Update
-                </button>
-              </>
-            ) : (
-              <>
-                <button onClick={() => newPath(_id)} className=" my-3">
-                  Update
-                </button>
-                <button onClick={() => Delete(_id)} className="">
-                  Delete Item
-                </button>
-              </>
-            )}
-          </div>
-        </div>
+              <p className="price">Price :{price}</p>
+              <div className="more-information">
+                <div className="info-and-date-container">
+                  <div className="box info">
+                    <p>{quantity}</p>
+                  </div>
+                  <div className="box date">
+                    <p>{supplierName}</p>
+                  </div>
+                </div>
+                <p className="disclaimer">{description}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div className=" text-center "></div>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Yowza</Modal.Title>
@@ -115,42 +129,42 @@ const Product = (props) => {
 
 export default Product;
 {
-  /* <div className="container">
-  <div className="card">
-    <h5 className="my-3 text-start">
-      <span className="item-span">{name}</span>
-    </h5>
-    <div className="imgBx">
-      <img src={img} className="img-fluid" alt="car images" />
-    </div>
-    <div className="contentBx">
-      <p className="text-start fs-5">{description}</p>
-      <h5 className="text-start">
-        Price: <span className="item-span">{price}</span>
-      </h5>
-      <h5 className="text-start">
-        Supplier Name: <span className="item-span">{supplierName}</span>
-      </h5>
-      <h5 className="text-start">
-        Quantity: <span className="item-span">{quantity}</span>
-      </h5>
-      {fromHome !== undefined ? (
-        <>
-          <button onClick={() => newPath(_id)} className="button-33">
-            Update
-          </button>
-        </>
-      ) : (
-        <>
-          <button onClick={() => newPath(_id)} className="button-33 my-3">
-            Update
-          </button>
-          <button onClick={() => Delete(_id)} className="button-33">
-            Delete Item
-          </button>
-        </>
-      )}
-    </div>
-  </div>
-</div>; */
+  //    <div className="container">
+  //   <div className="card">
+  //     <h5 className="my-3 text-start">
+  //       <span className="item-span">{name}</span>
+  //     </h5>
+  //     <div className="imgBx">
+  //       <img src={img} className="img-fluid" alt="car images" />
+  //     </div>
+  //     <div className="contentBx">
+  //       <p className="text-start fs-5">{description}</p>
+  //       <h5 className="text-start">
+  //         Price: <span className="item-span">{price}</span>
+  //       </h5>
+  //       <h5 className="text-start">
+  //         Supplier Name: <span className="item-span">{supplierName}</span>
+  //       </h5>
+  //       <h5 className="text-start">
+  //         Quantity: <span className="item-span">{quantity}</span>
+  //       </h5>
+  //       {fromHome !== undefined ? (
+  //         <>
+  //           <button onClick={() => newPath(_id)} className="button-33">
+  //             Update
+  //           </button>
+  //         </>
+  //       ) : (
+  //         <>
+  //           <button onClick={() => newPath(_id)} className="button-33 my-3">
+  //             Update
+  //           </button>
+  //           <button onClick={() => Delete(_id)} className="button-33">
+  //             Delete Item
+  //           </button>
+  //         </>
+  //       )}
+  //     </div>
+  //   </div>
+  // </div>;
 }

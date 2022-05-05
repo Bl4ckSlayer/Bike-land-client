@@ -20,9 +20,14 @@ const ManageInventory = () => {
           <Product key={items._id} items={items}></Product>
         ))}
       </div>
-      <button onClick={() => gotoMyItem()} className="button-2 my-5 button-33">
-        Add New Item
-      </button>
+      <div className="text-center">
+        <button
+          onClick={() => gotoMyItem()}
+          className="button-51 my-5 button-33 w-50 "
+        >
+          Add New Item
+        </button>
+      </div>
     </div>
   );
 };
