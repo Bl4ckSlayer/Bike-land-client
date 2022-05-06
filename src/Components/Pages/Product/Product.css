@@ -153,9 +153,9 @@ ul
   margin-right: 10px;
 }
 ul .booking-card .informations-container .more-information .disclaimer {
-  margin-top: 20px;
-  font-size: 0.8em;
-  color: #7d7d7d;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #363232;
 }
 ul .booking-card:hover::before {
   background: rgba(10, 72, 112, 0.6);

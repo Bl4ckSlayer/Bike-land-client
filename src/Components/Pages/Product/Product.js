@@ -53,7 +53,7 @@ const Product = (props) => {
         <ul>
           <li className="booking-card" style={{ height: "45rem" }}>
             <img src={img} className="img-fluid " alt="" />
-            <div className="book-container m-2">
+            <div className="book-container m-1">
               <div className="content  ">
                 {fromHome !== undefined ? (
                   <>
@@ -89,13 +89,13 @@ const Product = (props) => {
               <div className="more-information">
                 <div className="info-and-date-container">
                   <div className="box info">
-                    <p>{quantity}</p>
+                    <p>Quantity : {quantity}</p>
                   </div>
                   <div className="box date">
-                    <p>{supplierName}</p>
+                    <p>Brand : {supplierName}</p>
                   </div>
                 </div>
-                <p className="disclaimer">{description}</p>
+                <p className="disclaimer ">{description}</p>
               </div>
             </div>
           </li>

@@ -9,7 +9,7 @@ const ManageInventory = () => {
 
   const navigate = useNavigate();
 
-  const gotoMyItem = () => {
+  const gotoAddInventory = () => {
     navigate("/addInventory");
   };
 
@@ -22,7 +22,10 @@ const ManageInventory = () => {
         ))}
       </div>
       <div className="text-center">
-        <button onClick={() => gotoMyItem()} className="button-51 my-5  w-50 ">
+        <button
+          onClick={() => gotoAddInventory()}
+          className="button-51 my-5  w-50 "
+        >
           Add New Item
         </button>
       </div>
