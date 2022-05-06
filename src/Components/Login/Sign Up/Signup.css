@@ -1,9 +1,10 @@
 .form-container {
   padding: 0 20px;
-  width: 50%;
+
   margin: 120px auto;
   box-sizing: border-box;
-  border-radius: 8px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 /* .form-container{

@@ -53,28 +53,28 @@ const Product = (props) => {
         <ul>
           <li className="booking-card" style={{ height: "45rem" }}>
             <img src={img} className="img-fluid " alt="" />
-            <div className="book-container">
-              <div className="content ">
+            <div className="book-container m-2">
+              <div className="content  ">
                 {fromHome !== undefined ? (
                   <>
                     <button
                       onClick={() => newPath(_id)}
-                      className="btn d-block text-center"
+                      className=" btn  text-center "
                     >
                       Update
                     </button>
                   </>
                 ) : (
                   <>
-                    <Button
+                    <button
                       onClick={() => newPath(_id)}
-                      className="btn my-3 text-center d-block"
+                      className=" btn  text-center "
                     >
                       Update
-                    </Button>
+                    </button>
                     <button
                       onClick={() => Delete(_id)}
-                      className="btn text-center d-block"
+                      className="btn text-center "
                     >
                       Delete Item
                     </button>
@@ -103,7 +103,7 @@ const Product = (props) => {
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Yowza</Modal.Title>
+          <Modal.Title className="text-danger">Warning</Modal.Title>
         </Modal.Header>
         <Modal.Body>Are You Sure You Want To Delete {name}?</Modal.Body>
         <Modal.Footer>

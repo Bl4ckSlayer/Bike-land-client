@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import logo from "../../../Images/logo.png";
-import "./Header.css";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -19,46 +18,49 @@ const Header = () => {
         collapseOnSelect
         expand="lg"
         bg=""
-        className=" bg-nav mb-4 fw-bolder "
+        className="  mb-4 fw-bolder "
+        style={{ backgroundColor: "rgba(36, 36, 36, 0.95)" }}
         sticky="top"
-        variant="dark"
       >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img src={logo} height={50} alt="" />
+            <img src={logo} height={70} alt="" />
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav "
+            className="bg-white"
+          />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <CustomLink className="me-4 navLink" to="/">
+              <CustomLink className="me-4  navLink" to="/">
                 Home
               </CustomLink>
-              <CustomLink className="me-4 navLink" to="/myproducts">
+              <CustomLink className="me-4 navLink " to="/myproducts">
                 My Products
               </CustomLink>
               {user && (
                 <>
-                  <CustomLink className="me-4 navLink" to="/manageInventory">
+                  <CustomLink className="me-4  navLink" to="/manageinventory">
                     Manage Inventory
                   </CustomLink>
-                  <CustomLink className="me-4 navLink" to="/addInventory">
+                  <CustomLink className="me-4  navLink" to="/addInventory">
                     Add Inventory
                   </CustomLink>
                 </>
               )}
-              <CustomLink className="me-4 navLink" to="/blogs">
+              <CustomLink className="me-4 navLink " to="/blogs">
                 Blogs
               </CustomLink>
-              <CustomLink className="me-4 navLink" to="/about">
+              <CustomLink className="me-4 navLink " to="/about">
                 About
               </CustomLink>
               {!user ? (
                 <>
-                  <CustomLink className="me-4 navLink" to="/signup">
+                  <CustomLink className="me-4 navLink " to="/signup">
                     Sign Up
                   </CustomLink>
-                  <CustomLink className="me-4 navLink" to="/login">
+                  <CustomLink className="me-4 navLink " to="/login">
                     Login
                   </CustomLink>
                 </>
@@ -71,7 +73,7 @@ const Header = () => {
                     {user?.displayName}
                   </span>
                   <button
-                    className="navLink border-0 bg-transparent text-start p-0 fw-bolder"
+                    className="navLink border-0 bg-transparent text-start text-white p-0 fw-bolder"
                     onClick={userSignOut}
                   >
                     Sign Out

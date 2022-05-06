@@ -29,7 +29,7 @@ const SingleInventory = () => {
   };
 
   const goToManageInventory = () => {
-    navigate("/manageInventory");
+    navigate("/manageinventory");
   };
   return (
     <div className="p-5 container">
@@ -45,13 +45,16 @@ const SingleInventory = () => {
                 <Card.Title>Brand : {supplierName}</Card.Title>
                 <Card.Text>{description}</Card.Text>
                 {quantity <= 0 ? (
-                  <button disabled className="button-51 mx-auto w-50">
+                  <button
+                    disabled
+                    className="button-51 text-danger mx-auto w-50"
+                  >
                     Stockout
                   </button>
                 ) : (
                   <button
                     onClick={() => DecreaseByOne(bike)}
-                    className="button-51 mx-auto w-50"
+                    className="button-33 mx-auto w-50"
                   >
                     Delivered
                   </button>
@@ -70,7 +73,7 @@ const SingleInventory = () => {
                 <input type="number" name="number" required />
               </div>
               <div className="text-center">
-                <button className="button-51 my-5 w-50 " type="submit">
+                <button className="button-33 my-5 w-50 " type="submit">
                   ReStock
                 </button>
               </div>

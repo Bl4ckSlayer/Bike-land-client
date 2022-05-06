@@ -36,8 +36,8 @@ const AddToInventory = () => {
     event.target.reset();
   };
   return (
-    <div className="form-container">
-      <div>
+    <div className="form-container container w-50">
+      <div className="m-3 p-2">
         <h2 className="form-title mb-5 text-center">Add To Inventory</h2>
         <form onSubmit={EventSubmit}>
           <div className="input-group">
