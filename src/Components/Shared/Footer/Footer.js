@@ -19,13 +19,13 @@ const Footer = () => {
           <div className="col-md-3 col-sm-12 my-3">
             <h4 className="text-center fw-bold text-white">About</h4>
             <p>
-              We at Pro Tech Gear are proud to introduce you to our unique
-              products. All of our products are Original and Authentic. We have
-              Worlds best Company products. We can assure Best Quality products.{" "}
+              We are a locally owned and operated and have been serving the
+              Woodlands since 1998. Our goal is to help promote the sport of
+              biking within the community.
             </p>
             <p>
-              You can start selling online with us without any investment and
-              create a full-fledged customizable store for free.
+              Bikeland's staff is made up of friendly and experienced people who
+              love to ride bikes.
             </p>
           </div>
           <div className="col-md-3 col-sm-12 my-3">
@@ -43,16 +43,16 @@ const Footer = () => {
                 <MdArrowForward className="text-info me-2" />
                 Inventory
               </Link>
-              <Link to="/" className="text-decoration-none text-white ">
+              <Link to="/about" className="text-decoration-none text-white ">
                 <MdArrowForward className="text-info me-2" />
-                Strength
+                About
               </Link>
 
               <Link to="/" className="text-decoration-none text-white ">
                 <MdArrowForward className="text-info me-2" />
                 Reviews
               </Link>
-              <Link to="/" className="text-decoration-none text-white ">
+              <Link to="/blogs" className="text-decoration-none text-white ">
                 <MdArrowForward className="text-info me-2" />
                 Blogs
               </Link>

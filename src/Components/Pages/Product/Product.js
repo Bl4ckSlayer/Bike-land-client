@@ -27,7 +27,7 @@ const Product = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // updating an user quanttit
+  // updating an user quantity
   const confirm = (id) => {
     const url = `https://limitless-castle-10450.herokuapp.com/inventory/${id}`;
     fetch(url, {

@@ -64,7 +64,7 @@ const Login = () => {
     );
   }
   return (
-    <div className="d-lg-flex container">
+    <div className="d-lg-flex container align-items-center">
       <div className="col-lg-6 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
         <img className=" img-fluid" src={login} alt="" />
       </div>

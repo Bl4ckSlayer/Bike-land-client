@@ -126,7 +126,7 @@ const Signup = () => {
             <h6 className="text-danger my-3"> {errorMessage}</h6>
             <ToastContainer />
             <p className="my-3 fs-5">
-              Already have an account?{" "}
+              Already have an account?
               <Link className="form-link" to="/login">
                 Login
               </Link>

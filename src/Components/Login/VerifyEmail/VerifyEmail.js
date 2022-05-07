@@ -21,12 +21,7 @@ const VerifyEmail = () => {
           </p>
         </div>
         <div className="text-center">
-          <a
-            className=""
-            href="https://www.gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://www.gmail.com" target="_blank" rel="noreferrer">
             <button className=" button-51">Click</button>
           </a>
         </div>

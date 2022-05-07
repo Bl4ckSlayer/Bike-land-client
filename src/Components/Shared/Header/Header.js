@@ -34,14 +34,15 @@ const Header = () => {
           />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              {/* <CustomLink className="me-4  navLink" to="/">
+              <CustomLink className="me-4  navLink" to="/">
                 Home
-              </CustomLink> */}
-              <CustomLink className="me-4 navLink " to="/myproducts">
-                My Products
               </CustomLink>
+
               {user && (
                 <>
+                  <CustomLink className="me-4 navLink " to="/myproducts">
+                    My Products
+                  </CustomLink>
                   <CustomLink className="me-4  navLink" to="/manageinventory">
                     Manage Inventory
                   </CustomLink>
@@ -69,7 +70,7 @@ const Header = () => {
                 <>
                   <span
                     className="navLink border-0 fw-bold me-4"
-                    style={{ color: "white" }}
+                    style={{ color: "yellow" }}
                   >
                     {user?.displayName}
                   </span>

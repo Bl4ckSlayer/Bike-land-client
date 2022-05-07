@@ -34,7 +34,7 @@ const MyProducts = () => {
   }, [user, myBikes, navigate]);
   console.log(myBikes);
   return (
-    <div className="container row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-center justify-content-center">
       {myBikes.length === 0 && <Loading></Loading>}
       {myBikes.map((items) => (
         <Product key={items._id} items={items}></Product>
