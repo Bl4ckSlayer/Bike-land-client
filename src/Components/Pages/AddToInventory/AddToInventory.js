@@ -17,7 +17,7 @@ const AddToInventory = () => {
     };
 
     event.preventDefault();
-    const url = `http://localhost:5000/inventory`;
+    const url = `https://limitless-castle-10450.herokuapp.com/inventory`;
 
     fetch(url, {
       method: "POST",

@@ -12,7 +12,7 @@ const SingleInventory = () => {
   const [bike, setBike] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory/${id}`)
+    fetch(`https://limitless-castle-10450.herokuapp.com/inventory/${id}`)
       .then((res) => res.json())
       .then((data) => setBike(data));
   }, [bike]);

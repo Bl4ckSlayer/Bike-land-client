@@ -17,7 +17,7 @@ const MyProducts = () => {
   useEffect(() => {
     const getMtItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/mybikes?email=${email}`;
+      const url = `https://limitless-castle-10450.herokuapp.com/mybikes?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setMyBikes(data);

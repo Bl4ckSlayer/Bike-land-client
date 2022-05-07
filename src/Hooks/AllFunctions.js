@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import FindData from "./FindData";
 
 const AllFunctions = () => {
@@ -18,7 +17,7 @@ const AllFunctions = () => {
       quantity: newQuantity,
     };
 
-    const url = `http://localhost:5000/inventory/${item._id}`;
+    const url = `https://limitless-castle-10450.herokuapp.com/inventory/${item._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -47,7 +46,7 @@ const AllFunctions = () => {
       quantity: newQuantity,
     };
 
-    const url = `http://localhost:5000/inventory/${item._id}`;
+    const url = `https://limitless-castle-10450.herokuapp.com/inventory/${item._id}`;
     fetch(url, {
       method: "PUT",
       headers: {

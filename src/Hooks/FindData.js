@@ -4,7 +4,7 @@ const FindData = () => {
   const [findData, setFindData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://limitless-castle-10450.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((newData) => setFindData(newData));
   }, [findData]);
