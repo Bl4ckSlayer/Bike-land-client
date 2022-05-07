@@ -7,10 +7,11 @@ import axiosPrivate from "../../../Api/AxiosPrivate";
 import { signOut } from "firebase/auth";
 
 import Product from "../Product/Product";
+import Loading from "../../Login/Loading/Loading";
 
 const MyProducts = () => {
   const [myBikes, setMyBikes] = useState([]);
-  const [data, setData] = useState([]);
+
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -30,10 +31,11 @@ const MyProducts = () => {
       }
     };
     getMtItems();
-  }, [user, myBikes]);
+  }, [user, myBikes, navigate]);
   console.log(myBikes);
   return (
     <div className="container row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      {myBikes.length === 0 && <Loading></Loading>}
       {myBikes.map((items) => (
         <Product key={items._id} items={items}></Product>
       ))}

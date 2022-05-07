@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import AllFunctions from "../../../Hooks/AllFunctions";
+
 import FindData from "../../../Hooks/FindData";
 import "./Product.css";
 
 const Product = (props) => {
   const { items, fromHome } = props;
   const { _id, name, description, price, img, supplierName, quantity } = items;
-  const [DecreaseByOne, IncreaseByOne] = AllFunctions();
   const navigate = useNavigate();
 
   const [bike, setBike] = useState([]);
@@ -49,10 +48,10 @@ const Product = (props) => {
   };
   return (
     <div className="container ">
-      <div class="profile-card-4 text-center">
+      <div className="profile-card-4 text-center">
         <img src={img} className="img-fluid  " alt="" />
-        <div class="profile-content">
-          <div class=" d-lg-flex">
+        <div className="profile-content">
+          <div className=" d-lg-flex">
             {fromHome !== undefined ? (
               <>
                 <button
@@ -79,22 +78,25 @@ const Product = (props) => {
               </>
             )}
           </div>
-          <div class="profile-description">{description}</div>
-          <div class="row">
-            <div class="col-xs-4">
-              <div class="profile-overview">
+          <div className="profile-overview">
+            <h4>{name}</h4>
+          </div>
+          <div className="profile-description">{description}</div>
+          <div className="row">
+            <div className="col-xs-4">
+              <div className="profile-overview">
                 <p>Supplier</p>
                 <h4>{supplierName}</h4>
               </div>
             </div>
-            <div class="col-xs-4">
-              <div class="profile-overview">
+            <div className="col-xs-4">
+              <div className="profile-overview">
                 <p>Price</p>
                 <h4>{price}</h4>
               </div>
             </div>
-            <div class="col-xs-4">
-              <div class="profile-overview">
+            <div className="col-xs-4">
+              <div className="profile-overview">
                 <p>Quantity</p>
                 <h4>{quantity}</h4>
               </div>
@@ -130,97 +132,3 @@ const Product = (props) => {
 };
 
 export default Product;
-
-{
-  /* <div className="container ">
-        <ul>
-          <li className="booking-card" style={{ height: "45em" }}>
-            <img src={img} className="img-fluid " alt="" />
-            <div className="book-container m-1">
-              <div className="content  ">
-                {fromHome !== undefined ? (
-                  <>
-                    <button
-                      onClick={() => newPath(_id)}
-                      className=" btn  text-center "
-                    >
-                      Update
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <button
-                      onClick={() => newPath(_id)}
-                      className=" btn  text-center "
-                    >
-                      Update
-                    </button>
-                    <button
-                      onClick={() => Delete(_id)}
-                      className="btn text-center "
-                    >
-                      Delete Item
-                    </button>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="informations-container">
-              <h2 className="title">{name}</h2>
-
-              <p className="price">Price :{price}</p>
-              <div className="more-information">
-                <div className="info-and-date-container">
-                  <div className="box info">
-                    <p>Quantity : {quantity}</p>
-                  </div>
-                  <div className="box date">
-                    <p>Brand : {supplierName}</p>
-                  </div>
-                </div>
-                <p className="disclaimer ">{description}</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div> */
-}
-//
-//    <div className="container">
-//   <div className="card">
-//     <h5 className="my-3 text-start">
-//       <span className="item-span">{name}</span>
-//     </h5>
-//     <div className="imgBx">
-//       <img src={img} className="img-fluid" alt="car images" />
-//     </div>
-//     <div className="contentBx">
-//       <p className="text-start fs-5">{description}</p>
-//       <h5 className="text-start">
-//         Price: <span className="item-span">{price}</span>
-//       </h5>
-//       <h5 className="text-start">
-//         Supplier Name: <span className="item-span">{supplierName}</span>
-//       </h5>
-//       <h5 className="text-start">
-//         Quantity: <span className="item-span">{quantity}</span>
-//       </h5>
-//       {fromHome !== undefined ? (
-//         <>
-//           <button onClick={() => newPath(_id)} className="button-33">
-//             Update
-//           </button>
-//         </>
-//       ) : (
-//         <>
-//           <button onClick={() => newPath(_id)} className="button-33 my-3">
-//             Update
-//           </button>
-//           <button onClick={() => Delete(_id)} className="button-33">
-//             Delete Item
-//           </button>
-//         </>
-//       )}
-//     </div>
-//   </div>
-// </div>;

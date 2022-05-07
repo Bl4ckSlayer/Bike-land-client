@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Button, Card, Col, Form, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import AllFunctions from "../../../Hooks/AllFunctions";
 
@@ -15,7 +15,7 @@ const SingleInventory = () => {
     fetch(`https://limitless-castle-10450.herokuapp.com/inventory/${id}`)
       .then((res) => res.json())
       .then((data) => setBike(data));
-  }, [bike]);
+  }, [bike, id]);
 
   const [DecreaseByOne, IncreaseByOne] = AllFunctions();
   const { name, description, price, img, supplierName, quantity } = bike;

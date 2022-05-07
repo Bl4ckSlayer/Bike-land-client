@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import {
@@ -12,7 +12,7 @@ import { Button, Form } from "react-bootstrap";
 import SocialLogin from "../Social Login/SocialLogin";
 import Loading from "../Loading/Loading";
 import useToken from "../../../Hooks/UseToken";
-
+import login from "../../../Images/Login.jpg";
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -22,10 +22,6 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
   let errorElement = <></>;
-
-  const eventSetEmail = (event) => {
-    setEmail(event.target.value);
-  };
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -68,9 +64,9 @@ const Login = () => {
     );
   }
   return (
-    <div className="row container">
+    <div className="d-lg-flex container">
       <div className="col-lg-6 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
-        {/* <img className="wave img-fluid" src={carPng} alt="svg car image" /> */}
+        <img className=" img-fluid" src={login} alt="" />
       </div>
       <div className="col-lg-6 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
         <div className="form-container">

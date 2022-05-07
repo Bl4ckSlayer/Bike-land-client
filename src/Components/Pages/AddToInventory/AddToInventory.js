@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import auth from "../../../firebase.init";
 import FindData from "../../../Hooks/FindData";
 const AddToInventory = () => {
   const [findData, setFindData] = FindData();
-
+  const [user] = useAuthState(auth);
   const EventSubmit = (event) => {
     const newItem = {
       name: event.target.name.value,
@@ -66,7 +67,13 @@ const AddToInventory = () => {
           </div>
           <div className="input-group">
             <label htmlFor="email">Your Email</label>
-            <input type="text" name="email" required />
+            <input
+              type="text"
+              value={user?.email}
+              readOnly={true}
+              name="email"
+              required
+            />
           </div>
           <button className="button-51" type="submit" required>
             Submit

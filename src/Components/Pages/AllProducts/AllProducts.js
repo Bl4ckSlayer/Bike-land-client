@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import FindData from "../../../Hooks/FindData";
+import Loading from "../../Login/Loading/Loading";
 import Artical from "../Artical/Artical";
 import MyCard from "../MyCard/MyCard";
 import Product from "../Product/Product";
@@ -17,6 +17,7 @@ const AllProducts = () => {
     <div className="container">
       <h1 className="text-primary text-center mt-5"> Products</h1>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3  mb-5">
+        {findData.length === 0 && <Loading></Loading>}
         {findData.slice(0, 6).map((items) => (
           <Product key={items._id} items={items} fromHome={fromHome}></Product>
         ))}

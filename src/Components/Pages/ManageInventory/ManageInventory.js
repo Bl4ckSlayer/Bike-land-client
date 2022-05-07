@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import FindData from "../../../Hooks/FindData";
+import Loading from "../../Login/Loading/Loading";
 
 import Product from "../Product/Product";
 
@@ -16,6 +17,7 @@ const ManageInventory = () => {
     <div className="container">
       <h2 className="text-center mb-4 mt-4">All Products</h2>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
+        {findData.length === 0 && <Loading></Loading>}
         {findData.map((items) => (
           <Product key={items._id} items={items}></Product>
         ))}
