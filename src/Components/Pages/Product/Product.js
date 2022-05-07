@@ -48,10 +48,93 @@ const Product = (props) => {
     handleShow();
   };
   return (
-    <div className="container">
-      <div className="container">
+    <div className="container ">
+      <div class="profile-card-4 text-center">
+        <img src={img} className="img-fluid  " alt="" />
+        <div class="profile-content">
+          <div class=" d-lg-flex">
+            {fromHome !== undefined ? (
+              <>
+                <button
+                  onClick={() => newPath(_id)}
+                  className=" button-28 btn2 text-center "
+                >
+                  Update
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => newPath(_id)}
+                  className=" button-28 btn2 w-50 m-2  text-center "
+                >
+                  Update
+                </button>
+                <button
+                  onClick={() => Delete(_id)}
+                  className="button-28 btn1 w-50 m-2 text-center "
+                >
+                  Delete Item
+                </button>
+              </>
+            )}
+          </div>
+          <div class="profile-description">{description}</div>
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="profile-overview">
+                <p>Supplier</p>
+                <h4>{supplierName}</h4>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="profile-overview">
+                <p>Price</p>
+                <h4>{price}</h4>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="profile-overview">
+                <p>Quantity</p>
+                <h4>{quantity}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className="text-danger">Warning</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are You Sure You Want To Delete {name}?</Modal.Body>
+        <Modal.Footer>
+          <button
+            className="button-33"
+            variant="secondary"
+            onClick={handleClose}
+          >
+            Close
+          </button>
+          <button
+            className="button-33"
+            variant="primary"
+            onClick={() => confirm(_id)}
+          >
+            Proceed
+          </button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
+};
+
+export default Product;
+
+{
+  /* <div className="container ">
         <ul>
-          <li className="booking-card" style={{ height: "45rem" }}>
+          <li className="booking-card" style={{ height: "45em" }}>
             <img src={img} className="img-fluid " alt="" />
             <div className="book-container m-1">
               <div className="content  ">
@@ -100,71 +183,44 @@ const Product = (props) => {
             </div>
           </li>
         </ul>
-      </div>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title className="text-danger">Warning</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Are You Sure You Want To Delete {name}?</Modal.Body>
-        <Modal.Footer>
-          <button
-            className="button-33"
-            variant="secondary"
-            onClick={handleClose}
-          >
-            Close
-          </button>
-          <button
-            className="button-33"
-            variant="primary"
-            onClick={() => confirm(_id)}
-          >
-            Proceed
-          </button>
-        </Modal.Footer>
-      </Modal>
-    </div>
-  );
-};
-
-export default Product;
-{
-  //    <div className="container">
-  //   <div className="card">
-  //     <h5 className="my-3 text-start">
-  //       <span className="item-span">{name}</span>
-  //     </h5>
-  //     <div className="imgBx">
-  //       <img src={img} className="img-fluid" alt="car images" />
-  //     </div>
-  //     <div className="contentBx">
-  //       <p className="text-start fs-5">{description}</p>
-  //       <h5 className="text-start">
-  //         Price: <span className="item-span">{price}</span>
-  //       </h5>
-  //       <h5 className="text-start">
-  //         Supplier Name: <span className="item-span">{supplierName}</span>
-  //       </h5>
-  //       <h5 className="text-start">
-  //         Quantity: <span className="item-span">{quantity}</span>
-  //       </h5>
-  //       {fromHome !== undefined ? (
-  //         <>
-  //           <button onClick={() => newPath(_id)} className="button-33">
-  //             Update
-  //           </button>
-  //         </>
-  //       ) : (
-  //         <>
-  //           <button onClick={() => newPath(_id)} className="button-33 my-3">
-  //             Update
-  //           </button>
-  //           <button onClick={() => Delete(_id)} className="button-33">
-  //             Delete Item
-  //           </button>
-  //         </>
-  //       )}
-  //     </div>
-  //   </div>
-  // </div>;
+      </div> */
 }
+//
+//    <div className="container">
+//   <div className="card">
+//     <h5 className="my-3 text-start">
+//       <span className="item-span">{name}</span>
+//     </h5>
+//     <div className="imgBx">
+//       <img src={img} className="img-fluid" alt="car images" />
+//     </div>
+//     <div className="contentBx">
+//       <p className="text-start fs-5">{description}</p>
+//       <h5 className="text-start">
+//         Price: <span className="item-span">{price}</span>
+//       </h5>
+//       <h5 className="text-start">
+//         Supplier Name: <span className="item-span">{supplierName}</span>
+//       </h5>
+//       <h5 className="text-start">
+//         Quantity: <span className="item-span">{quantity}</span>
+//       </h5>
+//       {fromHome !== undefined ? (
+//         <>
+//           <button onClick={() => newPath(_id)} className="button-33">
+//             Update
+//           </button>
+//         </>
+//       ) : (
+//         <>
+//           <button onClick={() => newPath(_id)} className="button-33 my-3">
+//             Update
+//           </button>
+//           <button onClick={() => Delete(_id)} className="button-33">
+//             Delete Item
+//           </button>
+//         </>
+//       )}
+//     </div>
+//   </div>
+// </div>;

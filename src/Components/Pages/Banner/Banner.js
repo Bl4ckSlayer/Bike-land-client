@@ -33,7 +33,7 @@ const Banner = () => {
             <Carousel.Caption>
               <h2
                 className="button-85  mx-auto d-block w-50 "
-                style={{ fontSize: "1em" }}
+                style={{ fontSize: "0.9em" }}
               >
                 Beauty With Power
               </h2>
@@ -45,7 +45,7 @@ const Banner = () => {
             <Carousel.Caption>
               <h4
                 className="button-85  mx-auto d-block w-50 "
-                style={{ fontSize: "1em" }}
+                style={{ fontSize: "0.9em" }}
               >
                 Simple But Gorgeous
               </h4>

@@ -11,8 +11,7 @@ import auth from "../../../firebase.init";
 import { Button, Form } from "react-bootstrap";
 import SocialLogin from "../Social Login/SocialLogin";
 import Loading from "../Loading/Loading";
-
-// import useToken from "../../../Hooks/UseToken";
+import useToken from "../../../Hooks/UseToken";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -31,7 +30,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  // const [token] = useToken(user);
+  const [token] = useToken(user);
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
@@ -39,7 +38,7 @@ const Login = () => {
     return <Loading></Loading>;
   }
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 
@@ -47,7 +46,6 @@ const Login = () => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-
     await signInWithEmailAndPassword(email, password);
   };
 

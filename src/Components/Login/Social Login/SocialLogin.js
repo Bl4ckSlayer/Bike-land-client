@@ -7,9 +7,10 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../Loading/Loading";
-// import useToken from '../../../Hooks/UseToken';
+
 import googleLogo from "../../../Images/social/google.png";
 import githubLogo from "../../../Images/social/github.png";
+import useToken from "../../../Hooks/UseToken";
 
 const SocialLogin = () => {
   let errorMsg;
@@ -17,9 +18,10 @@ const SocialLogin = () => {
 
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
-
+  const [token] = useToken(user || user1);
   const navigate = useNavigate();
   const location = useLocation();
+
   let from = location.state?.from?.pathname || "/";
   if (loading || loading1) {
     return <Loading></Loading>;
@@ -33,7 +35,7 @@ const SocialLogin = () => {
     errorMsg = "";
   }
 
-  if (user || user1) {
+  if (token) {
     // navigate("/home");
     navigate(from, { replace: true });
   }

@@ -16,10 +16,10 @@ const BikeLinks = () => {
   return (
     <div className="mt-5 container-fluid">
       <div className="">
-        <div className="button-85 w-50 text-center d-block mx-auto mb-4">
+        <div className="button-85 w-50 text-center d-block mx-auto mb-4 pb-4">
           <h1
-            className="   mx-auto d-block text-center "
-            style={{ fontSize: "1.3em" }}
+            className=" fw-bolder  mx-auto d-block text-center pb-4 "
+            style={{ fontSize: "0.98em" }}
           >
             Our Brand Partner
           </h1>

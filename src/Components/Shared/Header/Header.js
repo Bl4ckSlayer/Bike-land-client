@@ -12,6 +12,7 @@ const Header = () => {
   const userSignOut = () => {
     signOut(auth);
   };
+
   return (
     <div>
       <Navbar
@@ -33,9 +34,9 @@ const Header = () => {
           />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <CustomLink className="me-4  navLink" to="/">
+              {/* <CustomLink className="me-4  navLink" to="/">
                 Home
-              </CustomLink>
+              </CustomLink> */}
               <CustomLink className="me-4 navLink " to="/myproducts">
                 My Products
               </CustomLink>
@@ -67,7 +68,7 @@ const Header = () => {
               ) : (
                 <>
                   <span
-                    className="navLink border-0 fw-bold user-name me-4"
+                    className="navLink border-0 fw-bold me-4"
                     style={{ color: "white" }}
                   >
                     {user?.displayName}

@@ -9,7 +9,10 @@ import mimg6 from "../../../Images/service/part-1.jpg";
 
 const MyCard = () => {
   return (
-    <div className="bg-danger p-4 ">
+    <div
+      className=" rounded-3  p-4 "
+      style={{ backgroundColor: "rgba(36, 36, 36, 0.95)" }}
+    >
       <CardGroup>
         <Card>
           <Card.Img variant="top" src={mimg1} />

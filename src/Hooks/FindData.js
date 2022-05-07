@@ -7,7 +7,7 @@ const FindData = () => {
     fetch("http://localhost:5000/inventory")
       .then((res) => res.json())
       .then((newData) => setFindData(newData));
-  }, []);
+  }, [findData]);
 
   return [findData, setFindData];
 };

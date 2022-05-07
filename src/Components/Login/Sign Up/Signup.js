@@ -9,6 +9,8 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../Social Login/SocialLogin";
+import useToken from "../../../Hooks/UseToken";
+import Loading from "../Loading/Loading";
 
 const Signup = () => {
   let errorMsg;
@@ -22,9 +24,8 @@ const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating] = useUpdateProfile(auth);
-  const [email, setEmail] = useState("");
 
-  //   const [token] = useToken(user);
+  const [token] = useToken(user);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,11 +36,11 @@ const Signup = () => {
     else setAgree(false);
   };
 
-  //   if (loading || updating) {
-  //     return <Loading></Loading>;
-  //   }
+  if (loading || updating) {
+    return <Loading></Loading>;
+  }
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 
