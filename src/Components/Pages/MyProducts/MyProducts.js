@@ -34,11 +34,21 @@ const MyProducts = () => {
   }, [user, myBikes, navigate]);
   console.log(myBikes);
   return (
-    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-center justify-content-center">
-      {myBikes.length === 0 && <Loading></Loading>}
-      {myBikes.map((items) => (
-        <Product key={items._id} items={items}></Product>
-      ))}
+    <div>
+      <div className="button-85 w-50 text-center d-block mx-auto m-4 ">
+        <h1
+          className=" fw-bolder  mx-auto d-block text-center  "
+          style={{ fontSize: "1.2rem" }}
+        >
+          My Products
+        </h1>
+      </div>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-center justify-content-center">
+        {myBikes.length === 0 && <Loading></Loading>}
+        {myBikes.map((items) => (
+          <Product key={items._id} items={items}></Product>
+        ))}
+      </div>
     </div>
   );
 };

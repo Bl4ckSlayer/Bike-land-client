@@ -19,7 +19,7 @@ const BikeLinks = () => {
         <div className="button-85 w-50 text-center d-block mx-auto mb-4 pb-4">
           <h1
             className=" fw-bolder  mx-auto d-block text-center pb-4 "
-            style={{ fontSize: "0.98em" }}
+            style={{ fontSize: "1em" }}
           >
             Our Brand Partner
           </h1>
@@ -31,42 +31,70 @@ const BikeLinks = () => {
           <div className="container  mt-4 ">
             <div className="row gy-4">
               <div className="col col-lg-3 col-4 ">
-                <a href="https://www.bmw.com" target="_blank">
+                <a href="https://www.bmw.com" target="_blank" rel="noreferrer">
                   <Image src={img1}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4">
-                <a href="https://can-am.brp.com/" target="_blank">
+                <a
+                  href="https://can-am.brp.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img2}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4 ">
-                <a href="https://www.ducati.com/ww/en/home" target="_blank">
+                <a
+                  href="https://www.ducati.com/ww/en/home"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img3}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4">
-                <a href="https://www.honda.com/" target="_blank">
+                <a
+                  href="https://www.honda.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img4}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4">
-                <a href="https://www.ridekayo.com/ditbikes" target="_blank">
+                <a
+                  href="https://www.ridekayo.com/ditbikes"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img7}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4">
-                <a href="https://www.kawasaki.com/en-us/" target="_blank">
+                <a
+                  href="https://www.kawasaki.com/en-us/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img6}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4">
-                <a href="https://www.suzuki.com.bd/" target="_blank">
+                <a
+                  href="https://www.suzuki.com.bd/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img9}></Image>
                 </a>
               </div>
               <div className="col col-lg-3 col-4">
-                <a href="https://yamaha-motor.com/" target="_blank">
+                <a
+                  href="https://yamaha-motor.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={img10}></Image>
                 </a>
               </div>

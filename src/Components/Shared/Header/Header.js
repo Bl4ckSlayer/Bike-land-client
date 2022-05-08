@@ -25,7 +25,7 @@ const Header = () => {
       >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img src={logo} height={70} alt="" />
+            <img src={logo} height={80} alt="" />
           </Navbar.Brand>
 
           <Navbar.Toggle

@@ -33,7 +33,7 @@ const AddToInventory = () => {
         setFindData(result);
       });
     // event.target.reset();
-    toast("Items Added, Check My Items Section");
+    toast("Items Added, Check My Products Section");
     event.target.reset();
   };
   return (

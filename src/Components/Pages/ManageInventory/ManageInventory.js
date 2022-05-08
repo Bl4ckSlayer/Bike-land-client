@@ -15,7 +15,14 @@ const ManageInventory = () => {
 
   return (
     <div className="container">
-      <h2 className="text-center mb-4 mt-4">All Products</h2>
+      <div className="button-85 w-50 text-center d-block mx-auto m-4 ">
+        <h1
+          className=" fw-bolder  mx-auto d-block text-center  "
+          style={{ fontSize: "1.2em" }}
+        >
+          All Products
+        </h1>
+      </div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
         {findData.length === 0 && <Loading></Loading>}
         {findData.map((items) => (
