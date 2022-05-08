@@ -15,9 +15,8 @@ const VerifyEmail = () => {
             We just need to verify your email address before you can access .
             Verify your email
             <span className="ver-email p-2">{user?.email}</span>
-            <span>Click the Button to verify</span>
             <br />
-            Thanks! – Bike Land
+            Click the Button to verify <br /> Thanks! – Bike Land
           </p>
         </div>
         <div className="text-center">
