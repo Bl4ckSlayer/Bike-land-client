@@ -18,9 +18,9 @@ const About = () => {
           height="500"
           src="https://www.youtube.com/embed/KcfFyo1Wg9E"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <div className="fs-5 bg-dark text-white  rounded-3 ">
           <h2 className=" text-center   text-warning   rounded-3 ">

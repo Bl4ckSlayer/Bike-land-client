@@ -20,8 +20,8 @@ const Banner = () => {
             <img className="d-block w-100" src={banner1} alt="First slide" />
             <Carousel.Caption>
               <h2
-                className="button-85  mx-auto d-block w-50 "
-                style={{ fontSize: "1em" }}
+                className="button-35  mx-auto d-block w-50 "
+                style={{ fontSize: "0.9em", cursor: "default" }}
               >
                 Speed Monster{" "}
               </h2>
@@ -32,8 +32,8 @@ const Banner = () => {
 
             <Carousel.Caption>
               <h2
-                className="button-85  mx-auto d-block w-50 "
-                style={{ fontSize: "0.85em" }}
+                className="button-35  mx-auto d-block w-50 "
+                style={{ fontSize: "0.9em", cursor: "default" }}
               >
                 Beauty With Power
               </h2>
@@ -44,8 +44,8 @@ const Banner = () => {
 
             <Carousel.Caption>
               <h4
-                className="button-85  mx-auto d-block w-50 "
-                style={{ fontSize: "0.9em" }}
+                className="button-35  mx-auto d-block w-50 "
+                style={{ fontSize: "0.9em", cursor: "default" }}
               >
                 Simple But Gorgeous
               </h4>

@@ -3,16 +3,16 @@ import React from "react";
 const Blogs = () => {
   return (
     <div
-      className=" container rounded-3 "
+      className=" container rounded-3  text-center"
       style={{ backgroundColor: "rgba(36, 36, 36, 0.95)" }}
     >
-      <div className="d-lg-flex justify-content-between m-4 p-4">
+      <div className="d-lg-flex m-4 justify-content-between p-4">
         <img
-          className="img-fluid w-50 rounded-3"
+          className="img-fluid w-50  rounded-3"
           src="https://res.cloudinary.com/practicaldev/image/fetch/s--ds3sVMSF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3hpi7hcrgvkpsv7vp8ni.png"
           alt=""
         />
-        <div className="text-white ms-4 w-50">
+        <div className="text-white ms-4 me-4">
           <h1 className="text-center text-warning">
             When to use nodejs and when to use mongodb?
           </h1>

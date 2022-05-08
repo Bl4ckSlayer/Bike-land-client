@@ -15,7 +15,10 @@ const ManageInventory = () => {
 
   return (
     <div className="container">
-      <div className="button-85 w-50 text-center d-block mx-auto m-4 ">
+      <div
+        className="button-85 w-50 text-center d-block mx-auto m-4 "
+        style={{ cursor: "default" }}
+      >
         <h1
           className=" fw-bolder  mx-auto d-block text-center  "
           style={{ fontSize: "1.2em" }}

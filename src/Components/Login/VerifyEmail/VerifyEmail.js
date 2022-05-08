@@ -5,7 +5,7 @@ import "./VerifyEmail.css";
 import verify from "../../../Images/Verify.jpg";
 const VerifyEmail = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+
   return (
     <div className="container d-lg-flex justify-content-center align-items-center">
       <div>

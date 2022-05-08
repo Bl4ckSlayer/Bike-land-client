@@ -37,48 +37,55 @@ const AddToInventory = () => {
     event.target.reset();
   };
   return (
-    <div className="form-container container w-50">
-      <div className="m-3 p-2">
-        <h2 className="form-title mb-5 text-center">Add To Inventory</h2>
-        <form onSubmit={EventSubmit}>
-          <div className="input-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="description">Description</label>
-            <textarea type="text" name="description" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="img">Image Url</label>
-            <input type="text" name="img" />
-          </div>
-          <div className="input-group">
-            <label htmlFor="price">Price</label>
-            <input type="text" name="price" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="quantity">Quantity</label>
-            <input type="number" name="quantity" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="supplierName">Supplier Name</label>
-            <input type="text" name="supplierName" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="email">Your Email</label>
-            <input
-              type="text"
-              value={user?.email}
-              readOnly={true}
-              name="email"
-              required
-            />
-          </div>
-          <button className="button-51" type="submit" required>
-            Submit
-          </button>
-        </form>
+    <div className="container text-center">
+      <h2
+        className="form-title button-35 text-center"
+        style={{ cursor: "default" }}
+      >
+        Add To Inventory
+      </h2>
+      <div className="form-container mt-4  container-fluid   w-75  ">
+        <div className="p-4 ">
+          <form onSubmit={EventSubmit}>
+            <div className="input-group">
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="description">Description</label>
+              <textarea type="text" name="description" required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="img">Image Url</label>
+              <input type="text" name="img" />
+            </div>
+            <div className="input-group">
+              <label htmlFor="price">Price</label>
+              <input type="text" name="price" required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="quantity">Quantity</label>
+              <input type="number" name="quantity" required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="supplierName">Supplier Name</label>
+              <input type="text" name="supplierName" required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="text"
+                value={user?.email}
+                readOnly={true}
+                name="email"
+                required
+              />
+            </div>
+            <button className="button-51" type="submit" required>
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { CgPhone } from "react-icons/cg";
 import { MdArrowForward, MdOutlineMail } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
@@ -104,13 +103,13 @@ const Footer = () => {
               placeholder="Your Email"
               className="w-100 mx-auto border-0 p-2 rounded-3"
             />
-            <Button
+            <button
               className="button-33
               my-3 w-50 mx-auto d-block"
               variant="info"
             >
               Get Notified
-            </Button>
+            </button>
           </div>
         </div>
         <div className="row text-center text-white">

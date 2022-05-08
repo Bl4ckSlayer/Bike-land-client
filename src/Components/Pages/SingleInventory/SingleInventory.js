@@ -33,10 +33,10 @@ const SingleInventory = () => {
   };
   return (
     <div className="p-5 container">
-      <div className="row align-content-center align-items-center justify-content-center">
-        <Row className="g-4 col-lg-6 col-md-12 col-sm-12 order-2 ">
+      <div className="row align-content-center align-items-center justify-content-center ">
+        <Row className="g-4 col-lg-6 col-md-12 col-sm-12 order-2">
           <Col>
-            <Card className="text-center">
+            <Card className="text-center  rounded-3 border-danger">
               <Card.Img variant="top" src={img} />
               <Card.Body>
                 <Card.Title>{name}</Card.Title>
@@ -63,7 +63,7 @@ const SingleInventory = () => {
             </Card>
           </Col>
         </Row>
-        <div className="card h-50  col-lg-6 col-md-12 col-sm-12  ">
+        <div className="card h-50  col-lg-6 col-md-12 col-sm-12 rounded-3 border-danger  ">
           <div className="">
             <h2 className="form-title mb-5 text-center">Restock Inventory</h2>
 

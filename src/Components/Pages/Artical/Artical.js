@@ -9,7 +9,10 @@ const Artical = () => {
   return (
     <div className="mt-4">
       <div className="">
-        <div className="button-85 w-50 text-center d-block mx-auto mb-4">
+        <div
+          className="button-85 w-50 text-center d-block mx-auto mb-4"
+          style={{ cursor: "default" }}
+        >
           <h1
             className="   mx-auto d-block  fw-bolder text-center "
             style={{ fontSize: "1.3em" }}
