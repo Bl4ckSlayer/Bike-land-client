@@ -28,23 +28,6 @@ label {
   cursor: pointer;
 }
 
-a {
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-  color: #000;
-}
-
-input,
-select,
-.but,
-textarea {
-  margin: 0;
-  font-size: 100%;
-}
-
 .top-header:before {
   background-image: url(https://1.bp.blogspot.com/-gxsOcYWghHA/Xp_izTh4sFI/AAAAAAAAU8s/y637Fwg99qAuzW9na_NT_uApny8Vce95gCEwYBhgL/s1600/header-footer-gradient-bg.png);
 }
