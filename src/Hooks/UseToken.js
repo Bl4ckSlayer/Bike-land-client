@@ -9,7 +9,9 @@ const useToken = (user) => {
       if (email) {
         const { data } = await axios.post(
           "https://server-assignment-11-bl4ckslayer.vercel.app/login",
-          { email }
+          {
+            email,
+          }
         );
         setToken(data.accessToken);
         localStorage.setItem("accessToken", data.accessToken);
