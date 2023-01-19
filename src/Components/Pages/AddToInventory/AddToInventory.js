@@ -18,7 +18,7 @@ const AddToInventory = () => {
     };
 
     event.preventDefault();
-    const url = `https://limitless-castle-10450.herokuapp.com/inventory`;
+    const url = `https://server-assignment-11-bl4ckslayer.vercel.app/inventory`;
 
     fetch(url, {
       method: "POST",

@@ -8,7 +8,7 @@ const useToken = (user) => {
       const email = user?.user?.email;
       if (email) {
         const { data } = await axios.post(
-          "https://limitless-castle-10450.herokuapp.com/login",
+          "https://server-assignment-11-bl4ckslayer.vercel.app/login",
           { email }
         );
         setToken(data.accessToken);

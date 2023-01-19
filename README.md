@@ -6,7 +6,7 @@
 
 ### Live Server Website:
 
-# [Server ](https://limitless-castle-10450.herokuapp.com)
+# [Server ](https://server-assignment-11-bl4ckslayer.vercel.app)
 
 ### Client Side Code:
 

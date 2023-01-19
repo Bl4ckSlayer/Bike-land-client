@@ -15,7 +15,7 @@ const Product = (props) => {
   const [findData, setFindData] = FindData();
 
   useEffect(() => {
-    fetch(`https://limitless-castle-10450.herokuapp.com/inventory`)
+    fetch(`https://server-assignment-11-bl4ckslayer.vercel.app/inventory`)
       .then((res) => res.json())
       .then((data) => setBike(data));
   }, []);
@@ -29,7 +29,7 @@ const Product = (props) => {
 
   // updating an user quantity
   const confirm = (id) => {
-    const url = `https://limitless-castle-10450.herokuapp.com/inventory/${id}`;
+    const url = `https://server-assignment-11-bl4ckslayer.vercel.app/inventory/${id}`;
     fetch(url, {
       method: "DELETE",
     })
