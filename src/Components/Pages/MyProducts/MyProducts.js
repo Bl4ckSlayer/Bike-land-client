@@ -17,7 +17,7 @@ const MyProducts = () => {
   useEffect(() => {
     const getMtItems = async () => {
       const email = user?.email;
-      const url = `https://server-assignment-11-bl4ckslayer.vercel.app/mybikes?email=${email}`;
+      const url = `https://bikeland-server.vercel.app/mybikes?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setMyBikes(data);

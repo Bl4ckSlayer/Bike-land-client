@@ -6,7 +6,7 @@
 
 ### Live Server Website:
 
-# [Server ](https://server-assignment-11-bl4ckslayer.vercel.app)
+# [Server ](https://bikeland-server.vercel.app)
 
 ### Client Side Code:
 

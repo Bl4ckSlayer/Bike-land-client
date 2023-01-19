@@ -12,7 +12,7 @@ const SingleInventory = () => {
   const [bike, setBike] = useState([]);
 
   useEffect(() => {
-    fetch(`https://server-assignment-11-bl4ckslayer.vercel.app/inventory/${id}`)
+    fetch(`https://bikeland-server.vercel.app/inventory/${id}`)
       .then((res) => res.json())
       .then((data) => setBike(data));
   }, [bike, id]);

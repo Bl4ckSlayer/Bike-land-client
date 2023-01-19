@@ -4,7 +4,7 @@ const FindData = () => {
   const [findData, setFindData] = useState([]);
 
   useEffect(() => {
-    fetch("https://server-assignment-11-bl4ckslayer.vercel.app/inventory")
+    fetch("https://bikeland-server.vercel.app/inventory")
       .then((res) => res.json())
       .then((newData) => setFindData(newData));
   }, [findData]);

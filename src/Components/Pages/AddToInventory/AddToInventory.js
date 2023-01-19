@@ -18,7 +18,7 @@ const AddToInventory = () => {
     };
 
     event.preventDefault();
-    const url = `https://server-assignment-11-bl4ckslayer.vercel.app/inventory`;
+    const url = `https://bikeland-server.vercel.app/inventory`;
 
     fetch(url, {
       method: "POST",

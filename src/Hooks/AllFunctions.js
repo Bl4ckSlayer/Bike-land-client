@@ -17,7 +17,7 @@ const AllFunctions = () => {
       quantity: newQuantity,
     };
 
-    const url = `https://server-assignment-11-bl4ckslayer.vercel.app/inventory/${item._id}`;
+    const url = `https://bikeland-server.vercel.app/inventory/${item._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -46,7 +46,7 @@ const AllFunctions = () => {
       quantity: newQuantity,
     };
 
-    const url = `https://server-assignment-11-bl4ckslayer.vercel.app/inventory/${item._id}`;
+    const url = `https://bikeland-server.vercel.app/inventory/${item._id}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -8,7 +8,7 @@ const useToken = (user) => {
       const email = user?.user?.email;
       if (email) {
         const { data } = await axios.post(
-          "https://server-assignment-11-bl4ckslayer.vercel.app/login",
+          "https://bikeland-server.vercel.app/login",
           {
             email,
           }
